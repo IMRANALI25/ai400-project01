@@ -90,7 +90,25 @@ Follow the standard structure in `references/note-structure.md`:
 - Apply consistent formatting (H1, H2, H3, bold, bullets, tables)
 - Keep sections clearly separated with horizontal rules
 
-### Step 4: Format Output
+### Step 4: Save Notes to Subfolder
+
+**ALWAYS save generated notes in a subfolder within the notes-generator skill directory:**
+
+- **Location**: `.claude/skills/notes-generator/notes-[topic-name]/`
+- **Naming convention**: Convert topic title to kebab-case (lowercase with hyphens)
+- **File name**: `[Topic-Title]-Study-Notes.md`
+
+**Examples**:
+- Topic: "Software Code Review" → Folder: `notes-software-code-review/` → File: `Software-Code-Review-Study-Notes.md`
+- Topic: "Machine Learning Basics" → Folder: `notes-machine-learning-basics/` → File: `Machine-Learning-Basics-Study-Notes.md`
+- Topic: "World War II" → Folder: `notes-world-war-ii/` → File: `World-War-II-Study-Notes.md`
+
+**Process**:
+1. Create the subfolder if it doesn't exist
+2. Save the markdown file in that subfolder
+3. Confirm the save location to the user
+
+### Step 5: Format Output
 
 Generate a complete Markdown document with:
 
