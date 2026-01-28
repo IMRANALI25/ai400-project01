@@ -6,7 +6,7 @@ description: |
   professional styling, structure business/academic documents, create tables,
   manage layouts, proofread content, apply formatting standards, add graphics,
   automate document tasks, ensure accessibility, secure documents, or deliver
-  high-quality formatted outputs.
+  high-quality formatted Word documents. Output is ALWAYS .docx format.
 ---
 
 # Document Reader & Formatter
@@ -116,13 +116,14 @@ Transforms raw or poorly formatted documents into professional, publication-read
 - Remove sensitive information (Document Inspector)
 - Protect tracked changes
 
-### 12. Professional Output & Delivery
-- Save formatted documents in specified subfolder
+### 12. Professional Word Document Output & Delivery (.docx ONLY)
+- Save formatted documents as Word (.docx) files ONLY
 - Use descriptive filenames with version numbers
 - Include document properties (title, author, subject)
 - Verify all fields are updated
 - Check print layout before saving
-- Deliver in appropriate format (.docx, .pdf if requested)
+- Output format is ALWAYS .docx (Microsoft Word 2007+)
+- Never outputs PDF, plain text, or other formats
 
 ## Document Types Supported
 
@@ -215,12 +216,13 @@ Ensure all requirements understood before implementing formatting.
 4. Update all cross-references
 5. Test navigation (bookmarks, links)
 
-### Step 7: Save and Deliver
-1. Save to `formatted-documents/` subfolder
-2. Use descriptive filename
+### Step 7: Save and Deliver (.docx ONLY)
+1. Save to `formatted-documents/` subfolder as .docx file
+2. Use descriptive filename with .docx extension
 3. Verify all formatting applied correctly
-4. Confirm file opens correctly
-5. Notify user of completion
+4. Confirm file opens correctly in Word
+5. Ensure output is Word 2007+ format (.docx)
+6. Notify user of completion
 
 ## Reference Files
 
@@ -248,11 +250,12 @@ Before delivering formatted document, verify:
 - [ ] Spell check completed
 - [ ] Accessibility features included (alt text)
 - [ ] Saved in correct subfolder with descriptive name
+- [ ] File saved in .docx format (Microsoft Word)
 
 ## What This Skill Does NOT Do
 
 - Does not create content from scratch (user provides content)
 - Does not design custom logos or graphics (user provides assets)
 - Does not print documents (only saves digital files)
-- Does not convert to PDF unless specifically requested
+- Does not convert to PDF or other formats (outputs .docx ONLY)
 - Does not violate document security or password protection
