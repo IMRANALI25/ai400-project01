@@ -4,7 +4,7 @@
 
 ## Topic Overview
 
-A quadratic equation is a special type of math equation that involves a variable squared (x²). It's called "quadratic" because "quad" means square, like a square has four sides. These equations create U-shaped curves called parabolas when graphed, and they're used everywhere in physics, engineering, economics, and everyday life to describe things like projectile motion, profit optimization, and area calculations.
+A quadratic equation is a special type of math equation that involves a variable squared (x^2). It's called "quadratic" because "quad" means square, like a square has four sides. These equations create U-shaped curves called parabolas when graphed, and they're used everywhere in physics, engineering, economics, and everyday life to describe things like projectile motion, profit optimization, and area calculations.
 
 ---
 
@@ -12,20 +12,20 @@ A quadratic equation is a special type of math equation that involves a variable
 
 ### Key Terms
 
-- **Quadratic Equation**: An equation that can be written in the form ax² + bx + c = 0, where a, b, and c are numbers and a ≠ 0
+- **Quadratic Equation**: An equation that can be written in the form ax^2 + bx + c = 0, where a, b, and c are numbers and a ≠ 0
 - **Variable**: A letter (usually x) that represents an unknown value
-- **Coefficient**: A number that multiplies a variable (like a, b, or c in ax² + bx + c)
-- **Constant**: A number by itself (like c in ax² + bx + c)
+- **Coefficient**: A number that multiplies a variable (like a, b, or c in ax^2 + bx + c)
+- **Constant**: A number by itself (like c in ax^2 + bx + c)
 - **Root**: The value(s) of x that make the equation true (also called solutions or zeros)
 - **Parabola**: The U-shaped curve you get when you graph a quadratic equation
 - **Vertex**: The lowest or highest point on a parabola
-- **Discriminant**: The part of the quadratic formula (b² - 4ac) that tells you how many roots exist
+- **Discriminant**: The part of the quadratic formula (b^2 - 4ac) that tells you how many roots exist
 - **Factoring**: Breaking an equation into simpler parts that multiply together
-- **Standard Form**: ax² + bx + c = 0
+- **Standard Form**: ax^2 + bx + c = 0
 
 ### Important Facts
 
-- A quadratic equation always has an x² term (that's what makes it quadratic)
+- A quadratic equation always has an x^2 term (that's what makes it quadratic)
 - The highest power of x is always 2 (never more, never less)
 - Quadratic equations can have 0, 1, or 2 solutions
 - The graph of any quadratic equation is always a parabola
@@ -34,11 +34,11 @@ A quadratic equation is a special type of math equation that involves a variable
 
 ### Quick Reference
 
-**Standard Form: ax² + bx + c = 0**
+**Standard Form: ax^2 + bx + c = 0**
 
 **Quadratic Formula:**
 ```
-x = (-b ± √(b² - 4ac)) / 2a
+x = (-b ± √(b^2 - 4ac)) / 2a
 ```
 
 **Three Methods to Solve:**
@@ -54,7 +54,7 @@ x = (-b ± √(b² - 4ac)) / 2a
 
 Think of a quadratic equation as a special recipe where the main ingredient is something squared. Just like a recipe has specific parts (ingredients, amounts, steps), a quadratic equation has specific parts:
 
-- **ax²** is the squared part (the "quadratic" part)
+- **ax^2** is the squared part (the "quadratic" part)
 - **bx** is the linear part (regular x term)
 - **c** is the constant (just a number)
 
@@ -82,7 +82,7 @@ Imagine throwing a ball straight up in the air. A quadratic equation can describ
 ### Key Points Summary
 
 - Quadratic equations describe curved relationships (not straight lines)
-- The variable is always squared (x²), which creates the curve
+- The variable is always squared (x^2), which creates the curve
 - Solutions tell you where the graph crosses the horizontal axis
 - The shape is always a parabola (U-shaped curve)
 - Three main methods exist to find the solutions
@@ -109,17 +109,17 @@ Imagine throwing a ball straight up in the air. A quadratic equation can describ
 
 ### How to Solve a Quadratic Equation
 
-**Example: Solve x² - 5x + 6 = 0**
+**Example: Solve x^2 - 5x + 6 = 0**
 
 **Method 1: Factoring**
-1. Write the equation: x² - 5x + 6 = 0
+1. Write the equation: x^2 - 5x + 6 = 0
 2. Find two numbers that multiply to 6 and add to -5
 3. These numbers are -2 and -3 (because -2 × -3 = 6 and -2 + -3 = -5)
 4. Rewrite: (x - 2)(x - 3) = 0
 5. Set each part to zero: x - 2 = 0 OR x - 3 = 0
 6. Solve: x = 2 OR x = 3
 
-**Method 2: Quadratic Formula** (for x² - 5x + 6 = 0)
+**Method 2: Quadratic Formula** (for x^2 - 5x + 6 = 0)
 1. Identify: a = 1, b = -5, c = 6
 2. Plug into formula: x = (5 ± √(25 - 24)) / 2
 3. Simplify: x = (5 ± √1) / 2
@@ -129,10 +129,10 @@ Imagine throwing a ball straight up in the air. A quadratic equation can describ
 ### Practice Application
 
 **Exercise 1**: Find where the ball hits the ground
-If a ball's height is given by h = -16t² + 64t (where t is time in seconds), when does it hit the ground?
+If a ball's height is given by h = -16t^2 + 64t (where t is time in seconds), when does it hit the ground?
 
 **Solution**:
-1. Ground means height = 0, so: -16t² + 64t = 0
+1. Ground means height = 0, so: -16t^2 + 64t = 0
 2. Factor out -16t: -16t(t - 4) = 0
 3. Set each part to zero: -16t = 0 OR t - 4 = 0
 4. Solve: t = 0 OR t = 4
@@ -143,16 +143,16 @@ You have 20 meters of fencing to make a rectangular garden against a wall (so yo
 
 **Solution**:
 1. Let width = w, then length = 20 - 2w
-2. Area = w × (20 - 2w) = 20w - 2w²
+2. Area = w × (20 - 2w) = 20w - 2w^2
 3. This is quadratic! The vertex gives the maximum
 4. Using vertex formula or completing the square: w = 5
-5. Dimensions: 5m wide × 10m long = 50m² maximum area
+5. Dimensions: 5m wide × 10m long = 50m^2 maximum area
 
 ### Practice Questions (Apply)
 
-1. Solve x² - 9 = 0 using factoring.
-2. Apply the quadratic formula to solve 2x² + 5x - 3 = 0.
-3. A ball is thrown upward with the equation h = -16t² + 80t. When does it reach maximum height and what is that height?
+1. Solve x^2 - 9 = 0 using factoring.
+2. Apply the quadratic formula to solve 2x^2 + 5x - 3 = 0.
+3. A ball is thrown upward with the equation h = -16t^2 + 80t. When does it reach maximum height and what is that height?
 
 ---
 
@@ -162,9 +162,9 @@ You have 20 meters of fencing to make a rectangular garden against a wall (so yo
 
 **The Three Parts of a Quadratic:**
 
-Each part of ax² + bx + c affects the graph differently:
+Each part of ax^2 + bx + c affects the graph differently:
 
-- **a (the x² coefficient)**: Controls the width and direction
+- **a (the x^2 coefficient)**: Controls the width and direction
   - Larger |a| = narrower parabola
   - Smaller |a| = wider parabola
   - Positive a = opens up (smile)
@@ -182,12 +182,12 @@ Each part of ax² + bx + c affects the graph differently:
 
 | Aspect | Linear Equation | Quadratic Equation |
 |--------|----------------|-------------------|
-| Form | y = mx + b | y = ax² + bx + c |
+| Form | y = mx + b | y = ax^2 + bx + c |
 | Graph | Straight line | Parabola (curve) |
-| Power of x | x¹ | x² |
+| Power of x | x¹ | x^2 |
 | Solutions | At most 1 solution | 0, 1, or 2 solutions |
 | Rate of change | Constant | Always changing |
-| Example | y = 2x + 3 | y = x² - 4x + 3 |
+| Example | y = 2x + 3 | y = x^2 - 4x + 3 |
 
 **Key insight**: Linear equations show steady, constant change. Quadratic equations show accelerated or decelerated change—the rate of change itself is changing!
 
@@ -195,33 +195,33 @@ Each part of ax² + bx + c affects the graph differently:
 
 **The Discriminant and Number of Roots:**
 
-The discriminant (b² - 4ac) tells you how many roots exist without solving:
+The discriminant (b^2 - 4ac) tells you how many roots exist without solving:
 
 - **Positive discriminant**: 2 real roots (parabola crosses x-axis twice)
 - **Zero discriminant**: 1 real root (parabola touches x-axis at one point)
 - **Negative discriminant**: 0 real roots (parabola never touches x-axis)
 
 **Example Analysis:**
-- x² - 4x + 3 = 0 → discriminant = 16 - 12 = 4 (positive) → 2 roots
-- x² - 4x + 4 = 0 → discriminant = 16 - 16 = 0 (zero) → 1 root
-- x² - 4x + 5 = 0 → discriminant = 16 - 20 = -4 (negative) → 0 roots
+- x^2 - 4x + 3 = 0 → discriminant = 16 - 12 = 4 (positive) → 2 roots
+- x^2 - 4x + 4 = 0 → discriminant = 16 - 16 = 0 (zero) → 1 root
+- x^2 - 4x + 5 = 0 → discriminant = 16 - 20 = -4 (negative) → 0 roots
 
 ### Patterns and Trends
 
 **Perfect Square Trinomials:**
 Some quadratics factor perfectly:
-- x² + 2x + 1 = (x + 1)²
-- x² + 4x + 4 = (x + 2)²
-- x² - 6x + 9 = (x - 3)²
+- x^2 + 2x + 1 = (x + 1)^2
+- x^2 + 4x + 4 = (x + 2)^2
+- x^2 - 6x + 9 = (x - 3)^2
 
-**Pattern**: If (b/2)² = c, then you have a perfect square!
+**Pattern**: If (b/2)^2 = c, then you have a perfect square!
 
 **Difference of Squares:**
-- x² - 9 = (x + 3)(x - 3)
-- x² - 25 = (x + 5)(x - 5)
-- x² - 1 = (x + 1)(x - 1)
+- x^2 - 9 = (x + 3)(x - 3)
+- x^2 - 25 = (x + 5)(x - 5)
+- x^2 - 1 = (x + 1)(x - 1)
 
-**Pattern**: x² - a² = (x + a)(x - a)
+**Pattern**: x^2 - a^2 = (x + a)(x - a)
 
 ### Practice Questions (Analyze)
 
@@ -251,7 +251,7 @@ Some quadratics factor perfectly:
 
 **When Quadratics Don't Work:**
 - **Complex Roots**: Sometimes the discriminant is negative, giving imaginary roots that don't exist on the real number line
-- **Not All Curves**: Some curves are cubic (x³), exponential, or other types
+- **Not All Curves**: Some curves are cubic (x^3), exponential, or other types
 - **Sensitivity**: Small changes in coefficients can dramatically change the solutions
 
 **Computational Complexity:**
@@ -349,7 +349,7 @@ Create a project that finds:
 2. List the three methods for solving quadratic equations.
 3. What is the quadratic formula?
 4. Define the term "discriminant."
-5. Identify the values of a, b, and c in the equation 3x² - 7x + 2 = 0.
+5. Identify the values of a, b, and c in the equation 3x^2 - 7x + 2 = 0.
 
 ### Understand (Explain)
 1. Explain why quadratic equations always make curved graphs instead of straight lines.
@@ -359,18 +359,18 @@ Create a project that finds:
 5. Explain what the vertex of a parabola represents.
 
 ### Apply (Use)
-1. Solve x² - 9 = 0 using factoring.
-2. Apply the quadratic formula to solve 2x² + 5x - 3 = 0.
-3. A ball is thrown upward with the equation h = -16t² + 80t. When does it reach maximum height and what is that height?
+1. Solve x^2 - 9 = 0 using factoring.
+2. Apply the quadratic formula to solve 2x^2 + 5x - 3 = 0.
+3. A ball is thrown upward with the equation h = -16t^2 + 80t. When does it reach maximum height and what is that height?
 4. Find the dimensions of a rectangle with perimeter 20 and maximum area.
-5. Use the discriminant to determine how many roots x² + 4x + 5 = 0 has.
+5. Use the discriminant to determine how many roots x^2 + 4x + 5 = 0 has.
 
 ### Analyze (Examine)
 1. What are the parts of a quadratic equation and how does each affect the graph?
 2. Analyze the relationship between the discriminant and the number of solutions.
 3. How is a quadratic equation related to a linear equation? What patterns do you see in their differences?
 4. What patterns do you notice in perfect square trinomials?
-5. How does changing the value of 'a' in ax² + bx + c affect the width of the parabola?
+5. How does changing the value of 'a' in ax^2 + bx + c affect the width of the parabola?
 
 ### Evaluate (Judge)
 1. What are the pros and cons of using the quadratic formula versus factoring?
@@ -390,9 +390,9 @@ Create a project that finds:
 
 ## Summary & Key Takeaways
 
-- **Quadratic equations** have the form ax² + bx + c = 0, where the highest power is x², creating curved parabolas when graphed
+- **Quadratic equations** have the form ax^2 + bx + c = 0, where the highest power is x^2, creating curved parabolas when graphed
 - **Three solution methods**: factoring (when possible), quadratic formula (always works), and completing the square (special cases)
-- **The discriminant (b² - 4ac)** reveals the number of solutions: positive = 2 solutions, zero = 1 solution, negative = 0 real solutions
+- **The discriminant (b^2 - 4ac)** reveals the number of solutions: positive = 2 solutions, zero = 1 solution, negative = 0 real solutions
 - **Real-world applications** include projectile motion, area optimization, profit maximization, and architectural design
 - **Graph features**: The coefficient 'a' controls direction and width, 'b' shifts the vertex horizontally, and 'c' moves it vertically
 - **The vertex** represents the maximum or minimum point, crucial for optimization problems in business and engineering
