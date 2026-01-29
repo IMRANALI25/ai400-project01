@@ -1,0 +1,21 @@
+{
+  "name": "stayconnect",
+  "version": "1.0.0",
+  "description": "Vacation rental marketplace like Airbnb",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "keywords": [
+    "vacation-rental",
+    "marketplace",
+    "airbnb-clone",
+    "booking"
+  ],
+  "author": "StayConnect",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

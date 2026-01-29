@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find vacation rentals, cabins, beach houses, unique homes and experiences around the world. Book your perfect stay with our secure platform.">
+    <meta name="keywords" content="vacation rental, Airbnb alternative, holiday homes, cabins, beach house, unique stays">
+    <meta name="author" content="StayConnect">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="StayConnect - Find Your Perfect Vacation Rental">
+    <meta property="og:description" content="Discover unique homes and experiences around the world. Book with confidence on our secure platform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stayconnect.com">
+    <meta property="og:image" content="assets/images/optimized/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StayConnect - Vacation Rentals & Unique Homes">
+    <meta name="twitter:description" content="Book unique homes and experiences worldwide">
+    <meta name="twitter:image" content="assets/images/optimized/twitter-image.jpg">
+
+    <title>StayConnect - Vacation Rentals, Cabins, Beach Houses & Unique Homes</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+
+    <!-- Bootstrap5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "StayConnect",
+      "description": "Vacation rental marketplace",
+      "url": "https://stayconnect.com",
+      "logo": "https://stayconnect.com/logo.png"
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-home text-primary me-2"></i>
+                <span class="fw-bold" style="color: #0066CC;">StayConnect</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#explore">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destinations">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experiences">Experiences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="becomeHostBtn">Become a Host</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="pages/user/login.html"><i class="fas fa-sign-in-alt me-2"></i>Sign In</a></li>
+                            <li><a class="dropdown-item" href="pages/user/signup.html"><i class="fas fa-user-plus me-2"></i>Sign Up</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="pages/user/dashboard.html"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-calendar-check me-2"></i>My Bookings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-heart me-2"></i>Saved Properties</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section with Search -->
+        <section class="hero-section position-relative overflow-hidden" style="background: linear-gradient(135deg, #0066CC 0%, #004080 100%); padding-top: 100px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="row text-center text-white mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="display-4 fw-bold mb-4">Find Your Next Adventure</h1>
+                        <p class="lead mb-0">Discover unique homes and experiences around the world</p>
+                    </div>
+                </div>
+
+                <!-- Search Box -->
+                <div class="search-box bg-white rounded-4 shadow-lg p-4">
+                    <form id="searchForm">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="searchLocation" placeholder="Location" required>
+                                    <label for="searchLocation"><i class="fas fa-map-marker-alt me-2"></i>Location</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="searchCheckIn" placeholder="Check-in" onfocus="(this.type='date')">
+                                    <label for="searchCheckIn"><i class="fas fa-calendar me-2"></i>Check-in</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="searchCheckOut" placeholder="Check-out" onfocus="(this.type='date')">
+                                    <label for="searchCheckOut"><i class="fas fa-calendar me-2"></i>Check-out</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-floating">
+                                    <select class="form-select" id="searchGuests">
+                                        <option value="1">1 Guest</option>
+                                        <option value="2" selected>2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5+ Guests</option>
+                                    </select>
+                                    <label for="searchGuests"><i class="fas fa-users me-2"></i>Guests</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary btn-lg w-100" style="background-color: #0066CC;">
+                                    <i class="fas fa-search me-2"></i>Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Quick Filters -->
+                <div class="quick-filters mt-4">
+                    <div class="d-flex flex-wrap gap-2 justify-content-center">
+                        <button class="btn btn-filter active" data-filter="all">All</button>
+                        <button class="btn btn-filter" data-filter="beach">Beachfront</button>
+                        <button class="btn btn-filter" data-filter="cabin">Cabins</button>
+                        <button class="btn btn-filter" data-filter="luxury">Luxury</button>
+                        <button class="btn btn-filter" data-filter="unique">Unique</button>
+                        <button class="btn btn-filter" data-filter="urban">Urban</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Properties Section -->
+        <section id="explore" class="py-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold">Featured Properties</h2>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-secondary active" id="gridViewBtn">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary" id="listViewBtn">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property Filters -->
+                <div class="filters-section mb-4">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <select class="form-select" id="priceFilter">
+                                <option value="">Price Range</option>
+                                <option value="0-100">$0 - $100</option>
+                                <option value="100-300">$100 - $300</option>
+                                <option value="300-500">$300 - $500</option>
+                                <option value="500+">$500+</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="typeFilter">
+                                <option value="">Property Type</option>
+                                <option value="house">House</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="villa">Villa</option>
+                                <option value="cabin">Cabin</option>
+                                <option value="unique">Unique</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="ratingFilter">
+                                <option value="">Rating</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4+ Stars</option>
+                                <option value="3">3+ Stars</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="amenitiesFilter">
+                                <option value="">Amenities</option>
+                                <option value="wifi">WiFi</option>
+                                <option value="pool">Pool</option>
+                                <option value="kitchen">Kitchen</option>
+                                <option value="parking">Parking</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Properties Grid -->
+                <div class="row g-4" id="propertiesGrid">
+                    <!-- Property Card 1 -->
+                    <div class="col-md-6 col-lg-4 property-card" data-price="150" data-type="apartment" data-rating="5" data-category="beach">
+                        <div class="card property-card-inner h-100 border-0 shadow-sm">
+                            <div class="position-relative">
+                                <img src="assets/images/properties/property-1.jpg" alt="Beachfront Apartment" class="card-img-top property-image" loading="lazy">
+                                <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-3 favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <div class="property-badge position-absolute top-0 start-0 m-3">
+                                    <span class="badge bg-primary">Superhost</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Ocean View Paradise</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="fw-bold">5.0</span>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted mb-2"><i class="fas fa-map-marker-alt me-1"></i>Malibu, California</p>
+                                <p class="card-text text-muted mb-3">2 bedrooms · 2 beds · 2 baths</p>
+                                <p class="card-text"><strong>$150</strong> <span class="text-muted">/ night</span></p>
+                                <div class="amenities mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i>WiFi</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-swimming-pool me-1"></i>Pool</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-utensils me-1"></i>Kitchen</span>
+                                </div>
+                                <a href="pages/property/property-detail.html?id=1" class="btn btn-primary w-100" style="background-color: #0066CC;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 2 -->
+                    <div class="col-md-6 col-lg-4 property-card" data-price="280" data-type="villa" data-rating="5" data-category="luxury">
+                        <div class="card property-card-inner h-100 border-0 shadow-sm">
+                            <div class="position-relative">
+                                <img src="assets/images/properties/property-2.jpg" alt="Luxury Villa" class="card-img-top property-image" loading="lazy">
+                                <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-3 favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Tuscany Luxury Villa</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="fw-bold">5.0</span>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted mb-2"><i class="fas fa-map-marker-alt me-1"></i>Tuscany, Italy</p>
+                                <p class="card-text text-muted mb-3">5 bedrooms · 6 beds · 4 baths</p>
+                                <p class="card-text"><strong>$280</strong> <span class="text-muted">/ night</span></p>
+                                <div class="amenities mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i>WiFi</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-swimming-pool me-1"></i>Pool</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-parking me-1"></i>Parking</span>
+                                </div>
+                                <a href="pages/property/property-detail.html?id=2" class="btn btn-primary w-100" style="background-color: #0066CC;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 3 -->
+                    <div class="col-md-6 col-lg-4 property-card" data-price="95" data-type="cabin" data-rating="4" data-category="cabin">
+                        <div class="card property-card-inner h-100 border-0 shadow-sm">
+                            <div class="position-relative">
+                                <img src="assets/images/properties/property-3.jpg" alt="Mountain Cabin" class="card-img-top property-image" loading="lazy">
+                                <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-3 favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Cozy Mountain Retreat</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="fw-bold">4.8</span>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted mb-2"><i class="fas fa-map-marker-alt me-1"></i>Aspen, Colorado</p>
+                                <p class="card-text text-muted mb-3">2 bedrooms · 3 beds · 1 bath</p>
+                                <p class="card-text"><strong>$95</strong> <span class="text-muted">/ night</span></p>
+                                <div class="amenities mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-fire me-1"></i>Fireplace</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i>WiFi</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-parking me-1"></i>Parking</span>
+                                </div>
+                                <a href="pages/property/property-detail.html?id=3" class="btn btn-primary w-100" style="background-color: #0066CC;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 4 - Unique Stay -->
+                    <div class="col-md-6 col-lg-4 property-card" data-price="200" data-type="unique" data-rating="5" data-category="unique">
+                        <div class="card property-card-inner h-100 border-0 shadow-sm">
+                            <div class="position-relative">
+                                <img src="assets/images/properties/property-4.jpg" alt="Treehouse" class="card-img-top property-image" loading="lazy">
+                                <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-3 favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <div class="property-badge position-absolute top-0 start-0 m-3">
+                                    <span class="badge bg-success">Unique Stay</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Enchanted Treehouse</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="fw-bold">5.0</span>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted mb-2"><i class="fas fa-map-marker-alt me-1"></i>Bali, Indonesia</p>
+                                <p class="card-text text-muted mb-3">1 bedroom · 1 bed · 1 bath</p>
+                                <p class="card-text"><strong>$200</strong> <span class="text-muted">/ night</span></p>
+                                <div class="amenities mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i>WiFi</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-leaf me-1"></i>Nature</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-spa me-1"></i>Peaceful</span>
+                                </div>
+                                <a href="pages/property/property-detail.html?id=4" class="btn btn-primary w-100" style="background-color: #0066CC;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 5 -->
+                    <div class="col-md-6 col-lg-4 property-card" data-price="175" data-type="house" data-rating="4" data-category="urban">
+                        <div class="card property-card-inner h-100 border-0 shadow-sm">
+                            <div class="position-relative">
+                                <img src="assets/images/properties/property-5.jpg" alt="City House" class="card-img-top property-image" loading="lazy">
+                                <button class="btn btn-sm btn-light position-0 end-0 m-3 favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Modern City Loft</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="fw-bold">4.7</span>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted mb-2"><i class="fas fa-map-marker-alt me-1"></i>New York, NY</p>
+                                <p class="card-text text-muted mb-3">3 bedrooms · 3 beds · 2 baths</p>
+                                <p class="card-text"><strong>$175</strong> <span class="text-muted">/ night</span></p>
+                                <div class="amenities mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-wifi me-1"></i>WiFi</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-tv me-1"></i>Smart TV</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-dumbbell me-1"></i>Gym</span>
+                                </div>
+                                <a href="pages/property/property-detail.html?id=5" class="btn btn-primary w-100" style="background-color: #0066CC;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 6 -->
+                    <div class="col-md-6 col-lg-4 property-card" data-price="350" data-type="villa" data-rating="5" data-category="luxury">
+                        <div class="card property-card-inner h-100 border-0 shadow-sm">
+                            <div class="position-relative">
+                                <img src="assets/images/properties/property-6.jpg" alt="Beach Villa" class="card-img-top property-image" loading="lazy">
+                                <button class="btn btn-sm btn-light position-absolute top-0 end-0 m-3 favorite-btn">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <div class="property-badge position-absolute top-0 start-0 m-3">
+                                    <span class="badge bg-primary">Superhost</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="card-title mb-0">Caribbean Beach Villa</h5>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="fw-bold">5.0</span>
+                                    </div>
+                                </div>
+                                <p class="card-text text-muted mb-2"><i class="fas fa-map-marker-alt me-1"></i>Turks & Caicos</p>
+                                <p class="card-text text-muted mb-3">6 bedrooms · 8 beds · 5 baths</p>
+                                <p class="card-text"><strong>$350</strong> <span class="text-muted">/ night</span></p>
+                                <div class="amenities mb-3">
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-swimming-pool me-1"></i>Pool</span>
+                                    <span class="badge bg-light text-dark me-1"><i class="fas fa-umbrella-beach me-1"></i>Beach</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-utensils me-1"></i>Kitchen</span>
+                                </div>
+                                <a href="pages/property/property-detail.html?id=6" class="btn btn-primary w-100" style="background-color: #0066CC;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-5">
+                    <button class="btn btn-outline-primary btn-lg" id="loadMoreBtn">
+                        Load More Properties <i class="fas fa-chevron-down ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section id="mapSection" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="fw-bold mb-4">Explore on Map</h2>
+                <div id="map" style="height: 500px; border-radius: 12px;"></div>
+            </div>
+        </section>
+
+        <!-- Popular Destinations -->
+        <section id="destinations" class="py-5">
+            <div class="container">
+                <h2 class="fw-bold mb-4">Popular Destinations</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="destination-card position-relative rounded-3 overflow-hidden" style="cursor: pointer;">
+                            <img src="assets/images/optimized/destination-1.jpg" alt="Paris" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                <div class="text-white">
+                                    <h3 class="fw-bold">Paris</h3>
+                                    <p>1,234 properties</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="destination-card position-relative rounded-3 overflow-hidden" style="cursor: pointer;">
+                            <img src="assets/images/optimized/destination-2.jpg" alt="Bali" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                <div class="text-white">
+                                    <h3 class="fw-bold">Bali</h3>
+                                    <p>856 properties</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="destination-card position-relative rounded-3 overflow-hidden" style="cursor: pointer;">
+                            <img src="assets/images/optimized/destination-3.jpg" alt="New York" class="img-fluid w-100" style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                                <div class="text-white">
+                                    <h3 class="fw-bold">New York</h3>
+                                    <p>2,456 properties</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5">Why Choose StayConnect</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-shield-alt fa-3x" style="color: #0066CC;"></i>
+                            </div>
+                            <h4>Secure Booking</h4>
+                            <p class="text-muted">Your payment is protected with our secure booking system and fraud prevention</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-star fa-3x" style="color: #0066CC;"></i>
+                            </div>
+                            <h4>Verified Reviews</h4>
+                            <p class="text-muted">Read authentic reviews from real travelers who have stayed at each property</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-headset fa-3x" style="color: #0066CC;"></i>
+                            </div>
+                            <h4>24/7 Support</h4>
+                            <p class="text-muted">Our support team is available around the clock to assist you with any questions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-5 text-white text-center" style="background: linear-gradient(135deg, #0066CC 0%, #004080 100%);">
+            <div class="container">
+                <h2 class="fw-bold mb-4">Become a Host</h2>
+                <p class="lead mb-4">Earn money by sharing your home with travelers from around the world</p>
+                <button class="btn btn-light btn-lg">List Your Property</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">StayConnect</h5>
+                    <p class="text-muted">Find unique homes and experiences around the world. Book with confidence on our secure platform.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Press</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Safety</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Cancellation</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-muted small">Subscribe for exclusive deals and travel inspiration</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button type="submit" class="btn btn-primary" style="background-color: #0066CC;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-muted small">
+                    &copy; 2024 StayConnect. All rights reserved.
+                </div>
+                <div class="col-md-6 text-end text-muted small">
+                    <a href="#" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none me-3">Terms of Service</a>
+                    <a href="#" class="text-muted text-decoration-none">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="addedToFavoritesToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fas fa-heart text-danger me-2"></i>
+                <strong class="me-auto">Added to Favorites</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Property has been added to your favorites!
+            </div>
+        </div>
+        <div id="removedFromFavoritesToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="far fa-heart me-2"></i>
+                <strong class="me-auto">Removed from Favorites</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Property has been removed from your favorites.
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Leaflet JS for Maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

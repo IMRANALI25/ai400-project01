@@ -1,0 +1,42 @@
+{
+  "name": "fashion-model-portfolio",
+  "version": "1.0.0",
+  "description": "Modern & trendy fashion model portfolio website with dark moody theme",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "build": "npm run optimize-images && npm run minify-css && npm run minify-js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "minify-css": "node scripts/minify-css.js",
+    "minify-js": "node scripts/minify-js.js",
+    "validate": "npx html-validate index.html",
+    "test": "npm run validate",
+    "deploy": "npm run build && echo 'Ready to deploy!'"
+  },
+  "keywords": [
+    "portfolio",
+    "fashion",
+    "model",
+    "website",
+    "responsive",
+    "modern"
+  ],
+  "author": "Fashion Model",
+  "license": "MIT",
+  "devDependencies": {
+    "html-validate": "^8.0.0",
+    "serve": "^14.2.0",
+    "cssnano": "^6.0.0",
+    "terser": "^5.20.0",
+    "sharp": "^0.33.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/fashion-model-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/fashion-model-portfolio/issues"
+  },
+  "homepage": "https://yourportfolio.com"
+}

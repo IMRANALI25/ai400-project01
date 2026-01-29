@@ -1,0 +1,54 @@
+# Test Cases for C-App
+
+**Source File**: c-app.c
+**Language**: C
+**Date Generated**: 2026-01-29
+
+## Test Case Summary
+
+| Category | Count |
+|----------|-------|
+| Happy Path | 7 |
+| Invalid Inputs | 9 |
+| Boundary Values | 5 |
+| Edge Cases | 4 |
+| Error Handling | 8 |
+| **Total** | **33** |
+
+## Test Cases
+
+| Test Case ID | Test Scenario | Test Description | Preconditions | Test Steps | Test Data | Expected Result | Priority |
+|--------------|---------------|------------------|---------------|------------|-----------|-----------------|----------|
+| TC001 | Create file with valid name | Verify system creates new file with valid filename to ensure file initialization works correctly | No existing file with same name | 1. Call create_file("test.txt")<br>2. Verify file exists on filesystem<br>3. Check file is empty (0 bytes) | filename = "test.txt" | File created successfully, size = 0 bytes, no errors | High |
+| TC002 | Create file in current directory | Verify file creation works without path specification to ensure default directory behavior | Current directory is writable | 1. Call create_file("data.log")<br>2. Verify file in current working directory | filename = "data.log" | File created in current working directory | High |
+| TC003 | Insert data to existing file | Verify system appends user input to file to ensure data persistence functionality | File exists and is writable | 1. Call insert_data("test.txt")<br>2. Input: "Hello World\n"<br>3. Input: "END\n"<br>4. Read file and verify content | filename = "test.txt"<br>data = "Hello World" | Data appended to file successfully, content persists | High |
+| TC004 | Insert multiple lines sequentially | Verify system handles multiple line inputs to ensure batch data entry works correctly | File exists | 1. Call insert_data("test.txt")<br>2. Input: "Line 1\n"<br>3. Input: "Line 2\n"<br>4. Input: "Line 3\n"<br>5. Input: "END\n" | filename = "test.txt"<br>data = 3 lines | All three lines written to file in correct order | High |
+| TC005 | Display file content completely | Verify system reads and displays entire file to ensure data retrieval works end-to-end | File exists with content | 1. Create file with known content "Test Data"<br>2. Call display_file("test.txt")<br>3. Verify stdout matches file content | filename = "test.txt" | All file content displayed to stdout accurately | High |
+| TC006 | Display empty file content | Verify system handles empty file gracefully to ensure no crash on zero-length files | Empty file exists | 1. Create empty file<br>2. Call display_file("empty.txt")<br>3. Verify no crash or error | filename = "empty.txt" | Header displayed, no content, clean exit | Medium |
+| TC007 | Main workflow complete integration | Verify complete workflow from creation to display to ensure end-to-end functionality | No existing file | 1. Run main()<br>2. Input filename: "integration.txt"<br>3. Input data: "Test Content\n"<br>4. Input: "END\n" | filename = "integration.txt"<br>data = "Test Content" | File created, data saved, content displayed sequentially | Critical |
+| TC008 | Create file with NULL pointer | Verify system handles NULL filename to prevent null pointer dereference crash | None | 1. Call create_file(NULL)<br>2. Monitor for crash or segmentation fault | filename = NULL | Program exits with error, no undefined behavior | Critical |
+| TC009 | Create file with path separators | Verify system handles filename with directory separators to ensure path creation works | Parent directory exists | 1. Call create_file("subdir/test.txt")<br>2. Check if subdirectory created or error | filename = "subdir/test.txt" | File created in subdirectory or appropriate error | Medium |
+| TC010 | Create file with invalid characters | Verify system handles invalid filename characters to prevent filesystem corruption | None | 1. Call create_file("test?.txt")<br>2. Verify error handling | filename = "test?.txt" | Error message or graceful failure | Medium |
+| TC011 | Insert data with NULL filename | Verify system rejects NULL filename in insert to prevent null pointer crash | None | 1. Call insert_data(NULL)<br>2. Check for crash/segfault | filename = NULL | Program exits with error message, no corruption | Critical |
+| TC012 | Insert data to non-existent file | Verify system handles write to non-existent file to ensure proper error detection | File does not exist | 1. Call insert_data("nonexistent.txt")<br>2. Verify error message displayed | filename = "nonexistent.txt" | Error: "Unable to open file", clean exit | High |
+| TC013 | Insert data to read-only file | Verify system handles write permission error to ensure proper error reporting | Read-only file exists | 1. Create file with read-only permissions<br>2. Call insert_data("readonly.txt")<br>3. Verify error handling | filename = "readonly.txt" | Error message: "Unable to open file" | High |
+| TC014 | Display file with NULL pointer | Verify system handles NULL filename in display to prevent null pointer crash | None | 1. Call display_file(NULL)<br>2. Monitor for segmentation fault | filename = NULL | Error message, program exits cleanly | Critical |
+| TC015 | Display non-existent file | Verify system reports error for missing file to prevent undefined behavior | File does not exist | 1. Call display_file("missing.txt")<br>2. Check error output | filename = "missing.txt" | Error: "Unable to read file", exit(1) | High |
+| TC016 | Create file with reserved name | Verify system handles reserved device filenames to prevent security issues | Windows OS | 1. Call create_file("CON")<br>2. Verify error handling | filename = "CON" | Error or graceful failure | Medium |
+| TC017 | Insert data with empty input only | Verify system handles immediate END command to ensure empty input scenario works | File exists | 1. Call insert_data("test.txt")<br>2. Input: "END\n"<br>3. Close file and check size | filename = "test.txt"<br>data = "" | No data written, file unchanged, clean exit | Medium |
+| TC018 | Insert data with whitespace only | Verify system handles whitespace-only input to ensure proper validation | File exists | 1. Call insert_data("test.txt")<br>2. Input: "   \n"<br>3. Input: "END\n" | filename = "test.txt"<br>data = "   " | Whitespace written to file | Low |
+| TC019 | Create file with maximum buffer size | Verify system handles filename at exactly 255 characters to ensure boundary compliance | None | 1. Call create_file(255-char filename)<br>2. Verify file creation | filename = "aaa...a.txt" (255 chars) | File created successfully or appropriate error | Medium |
+| TC020 | Create file exceeding maximum length | Verify system handles filename exceeding filesystem limit to ensure proper error handling | None | 1. Call create_file(300-char filename)<br>2. Check behavior | filename = 300 characters | Error or truncation, no crash | Medium |
+| TC021 | Insert data at buffer boundary (1023 bytes) | Verify system handles input at exactly buffer size to ensure no overflow occurs | File exists | 1. Call insert_data("test.txt")<br>2. Input: 1023 chars + newline<br>3. Input: "END\n" | buffer = 1023 chars + \n | Data written correctly, no buffer overflow | High |
+| TC022 | Insert data exceeding buffer size (1024 bytes) | Verify system handles input larger than buffer to prevent buffer overflow vulnerability | File exists | 1. Call insert_data("test.txt")<br>2. Input: 1024 chars without newline<br>3. Input: "END\n" | buffer = 1024 chars | Data truncated or handled safely, no overflow | Critical |
+| TC023 | Insert data with maximum filename length | Verify system handles 255-char filename during insert to ensure path handling works | File with long name exists | 1. Create file with 255-char name<br>2. Call insert_data(longname) | filename = 255 chars | Operation succeeds or fails gracefully | Medium |
+| TC024 | Filename with leading/trailing whitespace | Verify system handles whitespace in filename to ensure no silent failures | None | 1. Call create_file("  test.txt  ")<br>2. List directory to check name | filename = "  test.txt  " | File created with spaces preserved | Low |
+| TC025 | Create file then immediately delete | Verify system releases file handle properly to prevent resource leak | File just created | 1. Call create_file("temp.txt")<br>2. Immediately attempt delete<br>3. Verify delete succeeds | filename = "temp.txt" | File can be deleted (handle closed properly) | High |
+| TC026 | Multiple rapid file operations | Verify system can handle multiple create/insert/display cycles to ensure no state pollution | None | 1. Create file1, insert data<br>2. Create file2, insert data<br>3. Display both files | Two separate files | Both operations succeed independently | High |
+| TC027 | Filename with path traversal attack (../) | Verify system blocks relative path traversal to prevent directory traversal vulnerability | None | 1. Call create_file("../../etc/passwd")<br>2. Check actual location | filename = "../../etc/passwd" | Blocked or creation in current directory | Critical |
+| TC028 | Filename with absolute path | Verify system handles absolute path to prevent unauthorized directory access | None | 1. Call create_file("C:/Windows/test.txt")<br>2. Verify location | filename = "C:/Windows/test.txt" | Permission error or creation in allowed location | High |
+| TC029 | File creation in read-only directory | Verify system reports permission error correctly to ensure user feedback on insufficient permissions | Read-only directory | 1. Call create_file("/readonly/file.txt")<br>2. Check error message | filename = "/readonly/file.txt" | Error: "Unable to create file" | High |
+| TC030 | Display file with mixed line endings | Verify system handles both \n and \r\n to ensure cross-platform compatibility | File with CRLF/LF | 1. Create file with CRLF line endings<br>2. Call display_file() | filename = "mixed.txt" | Content displayed correctly with all characters | Medium |
+| TC031 | Create file on full disk | Verify system handles disk full condition to prevent partial file corruption | Disk at capacity | 1. Fill disk to capacity<br>2. Call create_file("full.txt")<br>3. Check error handling | filename = "full.txt" | Error message: "Unable to create file" | High |
+| TC032 | Insert data to file that is locked | Verify system detects file locked by another process to ensure file locking awareness | File locked by external process | 1. Lock file externally<br>2. Call insert_data("locked.txt")<br>3. Verify result | filename = "locked.txt" | Error message, no data corruption | High |
+| TC033 | Main with empty filename input | Verify system handles empty filename in main to prevent invalid file operations | None | 1. Run main()<br>2. Input: "\n" (just enter)<br>3. Verify behavior | filename = "" | Error in create_file, graceful exit | High |

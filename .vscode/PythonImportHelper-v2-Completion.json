@@ -1,11 +1,83 @@
 [
     {
+        "label": "Document",
+        "importPath": "docx",
+        "description": "docx",
+        "isExtraImport": true,
+        "detail": "docx",
+        "documentation": {}
+    },
+    {
+        "label": "Pt",
+        "importPath": "docx.shared",
+        "description": "docx.shared",
+        "isExtraImport": true,
+        "detail": "docx.shared",
+        "documentation": {}
+    },
+    {
+        "label": "Inches",
+        "importPath": "docx.shared",
+        "description": "docx.shared",
+        "isExtraImport": true,
+        "detail": "docx.shared",
+        "documentation": {}
+    },
+    {
+        "label": "RGBColor",
+        "importPath": "docx.shared",
+        "description": "docx.shared",
+        "isExtraImport": true,
+        "detail": "docx.shared",
+        "documentation": {}
+    },
+    {
+        "label": "WD_ALIGN_PARAGRAPH",
+        "importPath": "docx.enum.text",
+        "description": "docx.enum.text",
+        "isExtraImport": true,
+        "detail": "docx.enum.text",
+        "documentation": {}
+    },
+    {
+        "label": "qn",
+        "importPath": "docx.oxml.ns",
+        "description": "docx.oxml.ns",
+        "isExtraImport": true,
+        "detail": "docx.oxml.ns",
+        "documentation": {}
+    },
+    {
+        "label": "OxmlElement",
+        "importPath": "docx.oxml",
+        "description": "docx.oxml",
+        "isExtraImport": true,
+        "detail": "docx.oxml",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -138,6 +210,86 @@
         "importPath": "yaml",
         "description": "yaml",
         "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "set_cell_background",
+        "kind": 2,
+        "importPath": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "description": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "peekOfCode": "def set_cell_background(cell, color):\n    \"\"\"Set background color for a table cell.\"\"\"\n    shading_elm = OxmlElement('w:shd')\n    shading_elm.set(qn('w:fill'), color)\n    cell._element.get_or_add_tcPr().append(shading_elm)\ndef add_page_number(run):\n    \"\"\"Add page number field.\"\"\"\n    fldChar1 = OxmlElement('w:fldChar')\n    fldChar1.set(qn('w:fldCharType'), 'begin')\n    instrText = OxmlElement('w:instrText')",
+        "detail": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "documentation": {}
+    },
+    {
+        "label": "add_page_number",
+        "kind": 2,
+        "importPath": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "description": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "peekOfCode": "def add_page_number(run):\n    \"\"\"Add page number field.\"\"\"\n    fldChar1 = OxmlElement('w:fldChar')\n    fldChar1.set(qn('w:fldCharType'), 'begin')\n    instrText = OxmlElement('w:instrText')\n    instrText.set(qn('xml:space'), 'preserve')\n    instrText.text = \"PAGE\"\n    fldChar2 = OxmlElement('w:fldChar')\n    fldChar2.set(qn('w:fldCharType'), 'end')\n    run._r.append(fldChar1)",
+        "detail": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "documentation": {}
+    },
+    {
+        "label": "create_callout_box",
+        "kind": 2,
+        "importPath": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "description": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "peekOfCode": "def create_callout_box(doc, text, callout_type, icon):\n    \"\"\"Create a formatted callout box (Important, Note, Tip).\"\"\"\n    # Colors for different callout types\n    colors = {\n        'Important': {'bg': 'FFFFE0', 'border': 'FFA500'},  # Light yellow, orange\n        'Note': {'bg': 'E0FFFF', 'border': '0000FF'},      # Light blue, blue\n        'Tip': {'bg': 'E0FFE0', 'border': '008000'}         # Light green, green\n    }\n    color = colors.get(callout_type, colors['Note'])\n    # Create a table for the callout box",
+        "detail": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "documentation": {}
+    },
+    {
+        "label": "create_code_block",
+        "kind": 2,
+        "importPath": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "description": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "peekOfCode": "def create_code_block(doc, code_text, language=\"bash\"):\n    \"\"\"Create a formatted code block.\"\"\"\n    paragraph = doc.add_paragraph()\n    run = paragraph.add_run(code_text)\n    run.font.name = 'Consolas'\n    run.font.size = Pt(10)\n    # Set paragraph formatting\n    paragraph.paragraph_format.left_indent = Inches(0.5)\n    paragraph.paragraph_format.right_indent = Inches(0.5)\n    paragraph.paragraph_format.space_before = Pt(6)",
+        "detail": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "description": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
+        "peekOfCode": "def main():\n    # Create a new document\n    doc = Document()\n    # Set document margins (1 inch all around)\n    sections = doc.sections\n    for section in sections:\n        section.top_margin = Inches(1)\n        section.bottom_margin = Inches(1)\n        section.left_margin = Inches(1)\n        section.right_margin = Inches(1)",
+        "detail": ".claude.skills.document-reader-formatter-skill.scripts.generate_word_doc",
         "documentation": {}
     },
     {
@@ -339,6 +491,42 @@
         "documentation": {}
     },
     {
+        "label": "WebsiteBuilder",
+        "kind": 6,
+        "importPath": ".claude.skills.web-site-creator-skill.scripts.build",
+        "description": ".claude.skills.web-site-creator-skill.scripts.build",
+        "peekOfCode": "class WebsiteBuilder:\n    \"\"\"Build automation for website projects\"\"\"\n    def __init__(self, project_path='.'):\n        self.project_path = Path(project_path).resolve()\n        self.build_dir = self.project_path / 'dist'\n        self.timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')\n    def clean_build_dir(self):\n        \"\"\"Clean the build directory\"\"\"\n        if self.build_dir.exists():\n            shutil.rmtree(self.build_dir)",
+        "detail": ".claude.skills.web-site-creator-skill.scripts.build",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": ".claude.skills.web-site-creator-skill.scripts.build",
+        "description": ".claude.skills.web-site-creator-skill.scripts.build",
+        "peekOfCode": "def main():\n    \"\"\"Main entry point\"\"\"\n    if len(sys.argv) > 1:\n        project_path = sys.argv[1]\n    else:\n        project_path = '.'\n    builder = WebsiteBuilder(project_path)\n    success = builder.build()\n    sys.exit(0 if success else 1)\nif __name__ == '__main__':",
+        "detail": ".claude.skills.web-site-creator-skill.scripts.build",
+        "documentation": {}
+    },
+    {
+        "label": "WebsiteDeployer",
+        "kind": 6,
+        "importPath": ".claude.skills.web-site-creator-skill.scripts.deploy",
+        "description": ".claude.skills.web-site-creator-skill.scripts.deploy",
+        "peekOfCode": "class WebsiteDeployer:\n    \"\"\"Website deployment automation\"\"\"\n    def __init__(self, project_path='.'):\n        self.project_path = Path(project_path).resolve()\n        self.build_dir = self.project_path / 'dist'\n    def deploy_to_github_pages(self, branch='gh-pages'):\n        \"\"\"Deploy to GitHub Pages\"\"\"\n        print(\"\\n🚀 Deploying to GitHub Pages...\")\n        try:\n            # Check if git repository",
+        "detail": ".claude.skills.web-site-creator-skill.scripts.deploy",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": ".claude.skills.web-site-creator-skill.scripts.deploy",
+        "description": ".claude.skills.web-site-creator-skill.scripts.deploy",
+        "peekOfCode": "def main():\n    \"\"\"Main entry point\"\"\"\n    if len(sys.argv) < 2:\n        print(\"Usage: deploy.py <platform> [options]\")\n        print(\"\\nPlatforms:\")\n        print(\"  github   - Deploy to GitHub Pages\")\n        print(\"  netlify  - Deploy to Netlify\")\n        print(\"  vercel   - Deploy to Vercel\")\n        print(\"  preview  - Preview deployment locally\")\n        print(\"\\nExamples:\")",
+        "detail": ".claude.skills.web-site-creator-skill.scripts.deploy",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": ".claude.skills.init_skill",
@@ -424,7 +612,7 @@
         "kind": 2,
         "importPath": ".claude.skills.package_skill",
         "description": ".claude.skills.package_skill",
-        "peekOfCode": "def main():\n    if len(sys.argv) < 2:\n        print(\"Usage: python utils/package_skill.py <path/to/skill-folder> [output-directory]\")\n        print(\"\\nExample:\")\n        print(\"  python utils/package_skill.py skills/public/my-skill\")\n        print(\"  python utils/package_skill.py skills/public/my-skill ./dist\")\n        sys.exit(1)\n    skill_path = sys.argv[1]\n    output_dir = sys.argv[2] if len(sys.argv) > 2 else None\n    print(f\"📦 Packaging skill: {skill_path}\")",
+        "peekOfCode": "def main():\n    if len(sys.argv) < 2:\n        print(\"Usage: python utils/package_skill.py <path/to/skill-folder> [output-directory]\")\n        print(\"\\nExample:\")\n        print(\"  python utils/package_skill.py skills/public/my-skill\")\n        print(\"  python utils/package_skill.py skills/public/my-skill ./dist\")\n        sys.exit(1)\n    skill_path = sys.argv[1]\n    output_dir = sys.argv[2] if len(sys.argv) > 2 else None\n    print(f\"[PKG] Packaging skill: {skill_path}\")",
         "detail": ".claude.skills.package_skill",
         "documentation": {}
     },

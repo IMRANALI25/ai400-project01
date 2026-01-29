@@ -7,7 +7,21 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git remote add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Skill(code-review-skill)",
+      "Skill(unit-test-case-generator-skill)",
+      "Bash(gh auth status:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(copy:*)",
+      "Bash(powershell:*)",
+      "Bash(ls:*)",
+      "Skill(skill-creator)",
+      "Skill(web-site-creator-skill)",
+      "Bash(git reset:*)",
+      "Bash(git rm:*)",
+      "Bash(if exist nul del nul)",
+      "Bash(cmd:*)"
     ]
   }
 }
